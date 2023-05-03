@@ -24,7 +24,7 @@ app.post("/ask", async (req, res) => {
         messages: [{role: "user", content: prompt}],
       });
    
-    res.send({data:response.data.choices[0].message})
+    res.json({data:response.data.choices[0].message.content})
   } catch (error) {
     console.log(error.message);
   }
